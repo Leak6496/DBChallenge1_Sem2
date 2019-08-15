@@ -66,3 +66,38 @@ CREATE TABLE BOOKING (ClientId NUMERIC
 
 );
 
+INSERT INTO TOUR(TourName,[Description]) 
+VALUES('North','Tour of wineries and outlets of the Bedigo and Castlemaine region');
+INSERT INTO TOUR(TourName,[Description]) 
+VALUES('South','Tour of wineries and outlets of Mornington Penisula');
+INSERT INTO TOUR(TourName,[Description]) 
+VALUES('West','and Otways region');
+
+INSERT INTO CLIENT(ClientId,Surname,GivenName,Gender) 
+VALUES(1,'Price','Taylor','M');
+INSERT INTO CLIENT(ClientId,Surname,GivenName,Gender) 
+VALUES(2,'Gamble','Ellyse','I');
+INSERT INTO CLIENT(ClientId,Surname,GivenName,Gender) 
+VALUES(3,'Tan','Tilly','F');
+INSERT INTO CLIENT(ClientId,Surname,GivenName,Gender)
+VALUES(102306496,'Heng','Chhorvoleak','F');
+
+INSERT INTO EVENT(TourName,EventMonth,EventDay,EventYear,EventFee)
+VALUES('North','Jan',9,2016,200);
+INSERT INTO EVENT(TourName,EventMonth,EventDay,EventYear,EventFee)
+VALUES('South','Jan',16,2016,225);
+INSERT INTO EVENT(TourName,EventMonth,EventDay,EventYear,EventFee)
+VALUES('West','Feb',13,2016,200);
+INSERT INTO EVENT(TourName,EventMonth,EventDay,EventYear,EventFee)
+VALUES('North','Feb',13,2016,225);
+
+INSERT INTO BOOKING(ClientId,TourName,EventMonth,EventDay,EventYear,Payment,DateBooked)
+VALUES(1,'North','Jan',9,2016,200,'2015-10-12');
+INSERT INTO BOOKING(ClientId,TourName,EventMonth,EventDay,EventYear,Payment,DateBooked)
+VALUES(2,'West','Feb',13,2016,200,'2015-10-13');
+INSERT INTO BOOKING(ClientId,TourName,EventMonth,EventDay,EventYear,Payment,DateBooked)
+VALUES(3,'North','Feb',13,2016,225,'2015-10-14');
+INSERT INTO BOOKING(ClientId,TourName,EventMonth,EventDay,EventYear,Payment,DateBooked)
+VALUES(102306496,'South','Jan',16,2016,225,'2015-10-15');
+
+
