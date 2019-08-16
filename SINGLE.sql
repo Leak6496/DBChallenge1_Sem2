@@ -104,7 +104,16 @@ VALUES(102306496,'South','Jan',16,2016,225,'2015-10-15');
 
 --Task4
 ---Query1
-SELECT c.GivenName,c.Surname, t.TourName,t.[Description], e.EventYear,e.EventMonth,e.EventDay,e.EventFee,b.DateBooked,b.Payment
+SELECT c.GivenName
+,c.Surname
+, t.TourName
+,t.[Description]
+, e.EventYear
+,e.EventMonth
+,e.EventDay
+,e.EventFee
+,b.DateBooked
+,b.Payment
 FROM ((BOOKING b 
 INNER JOIN CLIENT c on b.ClientId=c.ClientId)
 INNER JOIN EVENT e on b.TourName=e.TourName 
@@ -128,3 +137,22 @@ GROUP BY e.EventMonth, t.TourName
 ---Query3
 SELECT * from BOOKING 
 WHERE BOOKING.Payment>(SELECT AVG(BOOKING.Payment) from BOOKING);
+
+--Task5
+CREATE VIEW ALLBOOKINGQuery1Task4 AS 
+SELECT c.GivenName,c.Surname
+, t.TourName,t.[Description]
+, e.EventYear
+,e.EventMonth
+,e.EventDay
+,e.EventFee
+,b.DateBooked
+,b.Payment
+FROM ((BOOKING b 
+INNER JOIN CLIENT c on b.ClientId=c.ClientId)
+INNER JOIN EVENT e on b.TourName=e.TourName 
+AND b.EventMonth=e.EventMonth 
+AND b.EventDay=e.EventDay 
+AND b.EventYear=e.EventYear
+INNER JOIN TOUR t on e.TourName=t.TourName
+);
