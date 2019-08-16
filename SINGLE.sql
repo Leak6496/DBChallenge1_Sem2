@@ -156,3 +156,22 @@ AND b.EventDay=e.EventDay
 AND b.EventYear=e.EventYear
 INNER JOIN TOUR t on e.TourName=t.TourName
 );
+
+--Task6- Write Test Queries to prove our responses
+---Query1-Proofing
+SELECT Count(*) AS TOTALRECORDSBOOKINGS from BOOKING;
+/*This will provide the total record of Bookings-4 Records.
+The Query1 of Task4 is showing 4 affected rows, which match the total records in booking table.
+Threfore, my query1 of task4 is correct*/
+---Query2-Proofing
+select count(*) from event;
+SELECT * from booking;/*this will let us know the frequency of query result*/
+/*This is correct because the event has 4 records and it match the result of my query2 of task4*/
+
+--Query3-Proofing
+
+SELECT AVG(Payment) from BOOKING;
+/*This will show the average of payment for our count all records above average*/
+SELECT Payment From BOOKING;
+/*This will show 4 records of payment in bookings*/
+/*Therefore if we compare the four records to our average query results, it show my query3 in task4 has two records above avg212.50*/
